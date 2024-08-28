@@ -1,0 +1,112 @@
+.image-wrapper {
+    position: relative;
+    display: inline-block; /* Ensures the wrapper aligns correctly */
+}
+
+.smaller-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.wrapper .circle {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: #2639ED;
+    margin: auto;
+    transform: scale(1, 1);
+}
+
+.wrapper .circle.pulse {
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation: pulse 2s infinite;
+            animation: pulse 2s infinite;
+    background-color: #5a88eb;
+}
+
+.wrapper svg {
+    fill: #fff;
+    stroke: #fff;
+    stroke-linejoin: round;
+    stroke-width: 5;
+    transition: all 0.3s;
+}
+
+.wrapper svg:hover {
+    cursor: pointer;
+    fill: #fff;
+    stroke: #fff;
+    transform: scale(1.2, 1.2);
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) { /* Tablet */
+    .wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .wrapper .circle {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .wrapper .circle {
+        width: 60px;
+        height: 60px;
+    }
+}

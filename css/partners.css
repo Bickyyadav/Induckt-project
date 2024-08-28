@@ -1,0 +1,90 @@
+.line {
+    position: relative;
+    height: 150px; /* Default height for larger screens */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.no-wire {
+    /* No horizontal line for the first line */
+}
+
+.wire-line {
+    border-bottom: 1px solid #B0B0B0; /* Style of the wire line */
+}
+
+.icons {
+    position: absolute;
+    top: -40px; /* Position icons above the line */
+    /* white-space: nowrap; */
+    /* display: flex; */
+}
+
+.icon {
+    font-size: 24px; /* Default size for icons */
+    margin: 0 10px; /* Default spacing for icons */
+}
+
+/* Movement for icons on the top line */
+.top-line .icons {
+    animation: move-left-to-right 15s linear infinite;
+}
+
+/* Movement for icons on the middle line */
+.middle-line .icons {
+    animation: move-right-to-left 15s linear infinite;
+}
+
+/* Movement for icons on the bottom line */
+.bottom-line .icons {
+    animation: move-left-to-right 15s linear infinite;
+}
+
+@keyframes move-left-to-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes move-right-to-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Responsive adjustments for tablets and mobile screens */
+@media (max-width: 768px) {
+    .line {
+        height: 150px; /* Adjust height for tablets */
+    }
+
+    .icons {
+        top: -30px; /* Adjust position for icons */
+    }
+
+    .icon {
+        font-size: 20px; /* Adjust icon size for tablets */
+        margin: 0 8px; /* Adjust spacing for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .line {
+        height: 100px; /* Adjust height for mobile screens */
+    }
+
+    .icons {
+        top: -20px; /* Adjust position for icons */
+    }
+
+    .icon {
+        font-size: 18px; /* Adjust icon size for mobile screens */
+        margin: 0 5px; /* Adjust spacing for mobile screens */
+    }
+}
